@@ -1,0 +1,23 @@
+{
+  "_solidity.compileUsingRemoteVersion": "v0.8.1+commit.df193b15",
+  "_liveServer.settings.port": 5502,
+  "editor.tabSize": 2,
+  "_solidity.defaultCompiler": "remote",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "solidity.packageDefaultDependenciesDirectory": [
+    "contracts/node_modules",
+    "contracts/lib"
+  ],
+  "solidity.compileUsingRemoteVersion": "v0.8.13+commit.abaa5c0e",
+  "solidity.packageDefaultDependenciesContractsDirectory": "",
+  "solidity.compilerOptimization": 200,
+  "solidity.compileUsingLocalVersion": "",
+  "solidity.enabledAsYouTypeCompilationErrorCheck": true,
+  "solidity.linter": "solhint",
+  "solidity.enableLocalNodeCompiler": false,
+  "solidity.validationDelay": 1500
+}

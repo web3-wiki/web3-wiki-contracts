@@ -1,0 +1,6 @@
+**/.env
+.env
+**/out/
+**/node_modules/
+
+**/cache/

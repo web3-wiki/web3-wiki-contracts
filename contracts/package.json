@@ -1,0 +1,54 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "hardhat": "^2.10.0"
+  },
+  "scripts": {
+    "clean": "hardhat clean",
+    "build": "hardhat compile",
+    "watch:test": "hardhat watch test",
+    "watch:swap": "hardhat watch swap",
+    "watch:build": "hardhat watch build",
+    "watch:deployhardhat": "hardhat watch deploytest --network hardhat ",
+    "watch:deploytest": "hardhat watch deploytest --network mumbai ",
+    "watch:deploy": "hardhat watch deploytest --network polygon ",
+    "lint": "yarn prettier && solhint -c .solhint.json src/**/*.sol",
+    "prettier": "prettier   --write src/**/*.sol",
+    "test": "hardhat test"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.1",
+    "@nomiclabs/hardhat-solhint": "^2.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.2",
+    "@nomiclabs/hardhat-ethers": "yarn:hardhat-deploy-ethers",
+    "@librax/hardhat-etherscan": "^3.0.3-a",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.7.0",
+    "@openzeppelin/contracts-upgradeable": "^4.7.0",
+    "@tenderly/hardhat-tenderly": "^1.1.4",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@typechain/hardhat": "^6.1.2",
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.0.3",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.1",
+    "hardhat-abi-exporter": "^2.10.0",
+    "hardhat-deploy": "^0.11.11",
+    "hardhat-deploy-ethers": "^0.3.0-beta.13",
+    "hardhat-gas-reporter": "^1.0.8",
+    "hardhat-watcher": "^2.3.0",
+    "solidity-coverage": "^0.7.21",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.1.0",
+    "prettier": "^2.2.0",
+    "@boringcrypto/boring-solidity": "boringcrypto/BoringSolidity#e06e943",
+    "lint-staged": ">=10",
+    "prettier-plugin-solidity": "^1.0.0-beta.5",
+    "typescript": "^4.7.4"
+  },
+  "lint-staged": {
+    "*.{sol}": "prettier --write"
+  }
+}
