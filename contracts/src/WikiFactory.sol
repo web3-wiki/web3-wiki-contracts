@@ -7,9 +7,12 @@ contract WikiFactory {
     mapping(address => bool) public isWikiAddr;
     mapping(bytes32 => address) public getAddrByHash;
 
-    //
-    constructor() {
-        //
+    address public baseToken;
+    address public voting;
+
+    constructor(address _token, address _voting) {
+        baseToken = _token;
+        voting = _voting;
     }
 
     //
@@ -28,7 +31,7 @@ contract WikiFactory {
             return getAddrByHash[titlehash];
         }
         address addr = address(0);
-        addr = address(new WikiPage{salt: keccak256(abi.encode(address(this), msg.sender))}(pagename, address(this), msg.sender));
+        addr = address(new WikiPage{salt: keccak256(abi.encode(address(this), msg.sender))}(pagename, address(this), msg.sender, baseToken));
         getAddrByHash[titlehash] = addr;
         wikipages.push(addr);
         isWikiAddr[addr] = true;
