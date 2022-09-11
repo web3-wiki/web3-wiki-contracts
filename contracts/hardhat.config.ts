@@ -10,9 +10,9 @@ import "@nomiclabs/hardhat-ethers"
 import "@nomiclabs/hardhat-waffle"
 import "@typechain/hardhat"
 import "@tenderly/hardhat-tenderly"
-import "@nomiclabs/hardhat-etherscan"
+// import "@nomiclabs/hardhat-etherscan"
 import "hardhat-abi-exporter"
-
+import "@librax/hardhat-etherscan"
 import "hardhat-gas-reporter"
 import "solidity-coverage"
 import "hardhat-watcher"
@@ -48,12 +48,18 @@ const config: HardhatUserConfig = {
     tests: "test",
   },
   etherscan: {
-    apiKey: {
-      bscTestnet: "6JCD1H4Y9TMW6HX66DV6A28RZPFRY2R3WN",
-      polygonMumbai: "TKYIHXYC3FE6A33MMSGWISAKHB3SFVHV5P",
-      polygon: "TKYIHXYC3FE6A33MMSGWISAKHB3SFVHV5P",
-      ftmTestnet: "DERPVHFYTQ172GWWMWQDMMKSYHNJHPCGWM",
-    },
+    apiKey: "TKYIHXYC3FE6A33MMSGWISAKHB3SFVHV5P",
+    // polygon: "TKYIHXYC3FE6A33MMSGWISAKHB3SFVHV5P",
+    // apiKey: {
+    //   polygon: "TKYIHXYC3FE6A33MMSGWISAKHB3SFVHV5P",
+    // },
+    // ,
+    // apiKey: {
+    //   //     bscTestnet: "6JCD1H4Y9TMW6HX66DV6A28RZPFRY2R3WN",
+    //   //     polygonMumbai: "TKYIHXYC3FE6A33MMSGWISAKHB3SFVHV5P",
+    //   polygon: "TKYIHXYC3FE6A33MMSGWISAKHB3SFVHV5P",
+    //   //     ftmTestnet: "DERPVHFYTQ172GWWMWQDMMKSYHNJHPCGWM",
+    // },
   },
 
   namedAccounts: {

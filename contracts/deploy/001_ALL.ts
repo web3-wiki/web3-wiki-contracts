@@ -47,6 +47,42 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       " "
   )
   await (await FakeAUSDC.mint(deployer, "1000000000000000000000")).wait()
+
+  //////////////// WikiVoting
+  const WikiVoting = await mydeploy(hre, "WikiVoting", deployer, [], true, gasLimit)
+  console.log("#WikiVoting")
+  console.log(
+    "npx hardhat verify --network " +
+      hre.network.name +
+      " " +
+      WikiVoting.address +
+      " " +
+      " --contract " +
+      "src/WikiVoting.sol" +
+      ":" +
+      "WikiVoting" +
+      " "
+  )
+
+  //////////////// WikiFactory
+  const WikiFactory = await mydeploy(hre, "WikiFactory", deployer, [FakeAUSDC.address, WikiVoting.address], true, gasLimit)
+  console.log("#WikiFactory")
+  console.log(
+    "npx hardhat verify --network " +
+      hre.network.name +
+      " " +
+      WikiFactory.address +
+      " " +
+      FakeAUSDC.address +
+      " " +
+      WikiVoting.address +
+      " " +
+      " --contract " +
+      "src/WikiFactory.sol" +
+      ":" +
+      "WikiFactory" +
+      " "
+  )
 }
 
 func.tags = ["ALL"]
