@@ -1,3 +1,5 @@
+// npx hardhat deploy --network mumbai --tags ALL
+// npx hardhat deploy --network fantomtest --tags ALL
 // npx hardhat deploy --network polygon --tags ALL
 // npx hardhat deploy --network evmostest --tags ALL
 // npx hardhat deploy --tags ALL
@@ -28,7 +30,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const networkName = hre.network.name
   const signers = await ethers.getSigners()
   const deployer = signers[0].address
-  const gasLimit = 5000000
+  const gasLimit = 8000000
   console.log("deployer = " + deployer)
 
   //////////////// FakeAUSDC
